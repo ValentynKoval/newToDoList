@@ -1,6 +1,5 @@
 package com.todolist.todolist.services;
 
-import com.auth0.jwt.interfaces.Claim;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -30,6 +29,7 @@ public class JwtService {
                 .map(GrantedAuthority::getAuthority)
                 .collect(Collectors.toList());
         claims.put("roles", rolesList);
+
         Date issuedDate = new Date();
         Date expirationDate = new Date(issuedDate.getTime() + expiration.toMillis());
 
