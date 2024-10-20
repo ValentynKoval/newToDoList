@@ -26,11 +26,8 @@ public class User implements UserDetails {
     @Column(name="email", unique = true)
     private String email;
 
-    @Column(name="phone_number", unique = true)
-    private String phoneNumber;
-
-    @Column(name = "name")
-    private String name;
+    @Column(name = "username")
+    private String username;
 
     @Column(name = "active")
     private boolean active;
@@ -77,6 +74,6 @@ public class User implements UserDetails {
 
     @Override
     public String getUsername() {
-        return email;
+        return username;
     }
 }
